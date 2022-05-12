@@ -13,7 +13,7 @@ contract DaoNftToken is Ownable, ERC721Checkpointable {
 
     constructor() ERC721("DAO NFT", "DAFT") {}
 
-    function safeMint(address to) public onlyOwner returns () {
+    function safeMint(address to) public onlyOwner {
         _safeMint(to, _tokenIdCounter.current());
         _tokenIdCounter.increment();
     }
